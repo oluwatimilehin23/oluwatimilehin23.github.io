@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>oluwatimilehin23 · Portfolio</title>
+<meta name="description" content="Web projects by oluwatimilehin23, live and with their code on GitHub.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a short intro, then each project as a wide card (preview left, write-up right) that stacks on phones. */
+:root {
+  --bg: #F5F6F8;
+  --surface: #FFFFFF;
+  --ink: #121318;
+  --soft: #5B5E6B;
+  --line: #E1E3E9;
+  --accent: #C2456B;
+  --display: "Space Grotesk", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --body: "Inter", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  --gl: max(clamp(16px, 5vw, 64px), env(safe-area-inset-left, 0px));
+  --gr: max(clamp(16px, 5vw, 64px), env(safe-area-inset-right, 0px));
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0F1014;
+    --surface: #17181E;
+    --ink: #ECEDF2;
+    --soft: #9A9DAA;
+    --line: #262832;
+    --accent: #F08FAD;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+.wrap { padding-left: var(--gl); padding-right: var(--gr); }
+.inner { max-width: 1180px; margin-inline: auto; }
+.label {
+  margin: 0; font-family: var(--mono); font-size: 12px; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--soft);
+}
+
+/* Header */
+.top { padding-block: calc(env(safe-area-inset-top, 0px) + 22px) 22px; }
+.top .inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.handle { font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: -0.01em; text-decoration: none; }
+.top nav { display: flex; gap: 24px; font-weight: 500; font-size: 15px; }
+.top nav a { text-decoration: none; color: var(--soft); }
+.top nav a:hover { color: var(--ink); }
+
+/* Intro */
+.intro { padding-block: clamp(48px, 9vw, 120px) clamp(40px, 6vw, 72px); }
+.intro h1 {
+  margin: 16px 0 20px; max-width: 14ch; font-family: var(--display); font-weight: 700;
+  font-size: clamp(44px, 7.4vw, 96px); line-height: .98; letter-spacing: -0.035em; text-wrap: balance;
+}
+.intro p.lede { margin: 0; max-width: 52ch; font-size: 19px; color: var(--soft); }
+
+/* Project card */
+.work { padding-bottom: clamp(56px, 8vw, 104px); }
+.work > .inner > .label { margin-bottom: 18px; }
+.project {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 0;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 28px; overflow: hidden;
+}
+.shot {
+  position: relative; display: grid; place-items: center; min-height: 440px; overflow: hidden; text-decoration: none;
+  background: radial-gradient(130% 100% at 50% 42%, #FDE9EF 0%, #F5C3D3 100%);
+}
+.shot .word {
+  position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none;
+  font-family: var(--display); font-weight: 700; font-size: clamp(110px, 17vw, 230px); letter-spacing: -0.06em;
+  color: #F0A7BE; line-height: 1;
+}
+.shot .bag { position: relative; width: min(56%, 320px); transition: transform .6s cubic-bezier(.2,.8,.2,1); filter: drop-shadow(0 26px 30px rgba(59, 15, 33, .22)); }
+.shot:hover .bag { transform: translateY(-4%) rotate(-3deg); }
+.shot .bag svg, .mini svg { display: block; width: 100%; height: auto; }
+.badge {
+  position: absolute; top: 18px; right: 18px; padding: 6px 11px; border-radius: 999px;
+  background: #2A1E22; color: #FFFDFA; font-family: var(--mono); font-size: 12px; letter-spacing: .06em;
+}
+.brand {
+  position: absolute; top: 16px; left: 20px; font-family: var(--display); font-weight: 700;
+  font-size: 24px; letter-spacing: -0.04em; color: #3B0F21;
+}
+.minis { position: absolute; left: 18px; bottom: 18px; display: flex; gap: 8px; }
+.mini {
+  width: 58px; height: 58px; padding: 9px; border-radius: 16px;
+  background: rgba(255, 253, 250, .86); box-shadow: 0 4px 14px rgba(59, 15, 33, .1);
+}
+.info { padding: clamp(28px, 4vw, 52px); display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.info h2 { margin: 0; font-family: var(--display); font-weight: 700; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.02; letter-spacing: -0.03em; }
+.info p { margin: 0; color: var(--soft); max-width: 56ch; }
+.features { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.features li { position: relative; padding-left: 22px; font-size: 16px; }
+.features li::before {
+  content: ""; position: absolute; left: 2px; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+}
+.stack { margin: 4px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.stack li {
+  padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px;
+  font-family: var(--mono); font-size: 12px; color: var(--soft);
+}
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 6px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 14px 22px; border-radius: 999px;
+  border: 1.5px solid var(--ink); background: var(--ink); color: var(--bg);
+  font-weight: 600; font-size: 15px; text-decoration: none; transition: transform .15s ease, background-color .2s ease, color .2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn.line { background: transparent; color: var(--ink); }
+.btn.line:hover { background: var(--ink); color: var(--bg); }
+
+/* More */
+.more { padding-bottom: clamp(64px, 9vw, 120px); }
+.more .inner { display: flex; justify-content: space-between; align-items: end; gap: 16px 40px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 36px; }
+.more h2 { margin: 0 0 6px; font-family: var(--display); font-weight: 700; font-size: 28px; letter-spacing: -0.02em; }
+.more p { margin: 0; color: var(--soft); }
+.more a { font-weight: 600; text-underline-offset: 4px; }
+
+footer { padding-block: 0 calc(28px + env(safe-area-inset-bottom, 0px)); color: var(--soft); font-size: 14px; }
+
+@media (max-width: 860px) {
+  .project { grid-template-columns: minmax(0, 1fr); }
+  .shot { min-height: 0; aspect-ratio: 4 / 3.4; }
+}
+@media (max-width: 480px) {
+  .mini { width: 48px; height: 48px; padding: 7px; border-radius: 13px; }
+  .top nav { gap: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0s !important; }
+}
+</style>
+</head>
+<body>
+<header class="top wrap">
+  <div class="inner">
+    <a class="handle" href="#">oluwatimilehin23</a>
+    <nav aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="https://github.com/oluwatimilehin23">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="intro wrap">
+    <div class="inner">
+      <p class="label">Portfolio</p>
+      <h1>Websites and interactive builds.</h1>
+      <p class="lede">Projects I've built for the web. Each one is live, with its code on GitHub.</p>
+    </div>
+  </section>
+
+  <section class="work wrap" id="work" aria-labelledby="emmy-title">
+    <div class="inner">
+      <p class="label">Featured project · 2026</p>
+      <article class="project">
+        <a class="shot" href="https://oluwatimilehin23.github.io/emmy-fashion-store/" aria-label="Open the Emmy Fashion Store live site">
+          <span class="word" aria-hidden="true">bloom</span>
+          <span class="brand" aria-hidden="true">emmy</span>
+          <span class="badge" aria-hidden="true">3D</span>
+          <span class="bag" aria-hidden="true">
+            <svg viewBox="0 0 200 200" focusable="false"><g transform="translate(0 12)">
+              <path d="M72 66 C72 12 128 12 128 66" fill="none" stroke="#E58BA6" stroke-width="11" stroke-linecap="round"/>
+              <rect x="64" y="58" width="16" height="11" rx="3" fill="#C9A55A"/>
+              <rect x="120" y="58" width="16" height="11" rx="3" fill="#C9A55A"/>
+              <path d="M50 66 H150 Q158 66 160 74 L174 150 Q177 167 160 167 H40 Q23 167 26 150 L40 74 Q42 66 50 66 Z" fill="#E58BA6"/>
+              <path d="M47 68 H153 L159 106 Q161 122 145 122 H55 Q39 122 41 106 Z" fill="rgba(0,0,0,.10)" stroke="rgba(255,255,255,.24)" stroke-width="1.5"/>
+              <rect x="86" y="112" width="28" height="17" rx="6" fill="#C9A55A"/>
+              <rect x="93" y="118" width="14" height="5" rx="2.5" fill="#E7CB86"/>
+            </g></svg>
+          </span>
+          <span class="minis" aria-hidden="true">
+            <span class="mini"><svg viewBox="0 0 200 200" focusable="false">
+              <path d="M36 122 H66 L61 172 H45 Z" fill="#E58BA6"/>
+              <path d="M36 122 H66 L61 172 H45 Z" fill="rgba(0,0,0,.22)"/>
+              <path d="M34 122 L68 122 C96 126 116 154 144 158 L178 160 Q188 161 188 168 V172 H142 C114 170 94 142 68 132 L34 130 Z" fill="#EAE0D3" stroke="rgba(0,0,0,.12)" stroke-width="1"/>
+              <path d="M100 144 C106 112 150 106 176 136 Q187 149 188 164 L144 160 C126 158 112 152 100 144 Z" fill="#E58BA6"/>
+            </svg></span>
+            <span class="mini"><svg viewBox="0 0 200 200" focusable="false">
+              <path d="M76 28 Q100 42 124 28 L142 38 L154 76 L136 82 L131 66 Q127 90 134 104 L164 186 H36 L66 104 Q73 90 69 66 L64 82 L46 76 L58 38 Z" fill="#2D55CF"/>
+              <path d="M78 30 L100 72 L122 30 Q100 44 78 30 Z" fill="rgba(0,0,0,.18)"/>
+              <path d="M67 97 H133 L134.6 107 H65.4 Z" fill="rgba(0,0,0,.14)"/>
+            </svg></span>
+            <span class="mini"><svg viewBox="0 0 200 200" focusable="false">
+              <path d="M18 80 Q40 70 88 82 Q96 84 96 94 Q94 124 66 126 Q36 128 28 104 Q24 92 18 80 Z" fill="#1F1C23"/>
+              <path d="M182 80 Q160 70 112 82 Q104 84 104 94 Q106 124 134 126 Q164 128 172 104 Q176 92 182 80 Z" fill="#1F1C23"/>
+              <path d="M92 88 Q100 80 108 88" fill="none" stroke="#1F1C23" stroke-width="7" stroke-linecap="round"/>
+              <path d="M30 86 Q48 80 84 88 Q90 90 89 97 Q87 118 65 119 Q42 120 35 103 Q32 94 30 86 Z" fill="rgba(70,60,80,.9)"/>
+              <path d="M170 86 Q152 80 116 88 Q110 90 111 97 Q113 118 135 119 Q158 120 165 103 Q168 94 170 86 Z" fill="rgba(70,60,80,.9)"/>
+            </svg></span>
+          </span>
+        </a>
+        <div class="info">
+          <h2 id="emmy-title">Emmy Fashion Store</h2>
+          <p>A one-page fashion store for Emmy, built around a 3D handbag that repaints itself as you scroll, so the whole page changes colour with it.</p>
+          <ul class="features">
+            <li>A 3D Top Handle bag that sweeps through six colours on scroll</li>
+            <li>15 bags, shoes, clothes and accessories, each one you can turn 360° in 3D</li>
+            <li>Quick view with colour and size pickers, and a cart that adds it all up</li>
+            <li>Built for phones too: drag to turn, pinch to zoom, tap for details</li>
+          </ul>
+          <ul class="stack" aria-label="Built with">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>three.js</li><li>GitHub Pages</li>
+          </ul>
+          <div class="actions">
+            <a class="btn" href="https://oluwatimilehin23.github.io/emmy-fashion-store/">Visit the live site</a>
+            <a class="btn line" href="https://github.com/oluwatimilehin23/emmy-fashion-store">View the code</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="more wrap" aria-labelledby="more-title">
+    <div class="inner">
+      <div>
+        <h2 id="more-title">More on GitHub</h2>
+        <p>Earlier projects, course work and experiments.</p>
+      </div>
+      <a href="https://github.com/oluwatimilehin23?tab=repositories">See all repositories →</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="inner">© 2026 oluwatimilehin23</div>
+</footer>
+</body>
+</html>
