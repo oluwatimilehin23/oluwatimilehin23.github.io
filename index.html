@@ -72,6 +72,7 @@ a { color: inherit; }
   display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 0;
   background: var(--surface); border: 1px solid var(--line); border-radius: 28px; overflow: hidden;
 }
+.projects { display: grid; gap: 28px; }
 .shot {
   position: relative; display: grid; place-items: center; min-height: 440px; overflow: hidden; text-decoration: none;
   background: radial-gradient(130% 100% at 50% 42%, #FDE9EF 0%, #F5C3D3 100%);
@@ -81,6 +82,24 @@ a { color: inherit; }
   font-family: var(--display); font-weight: 700; font-size: clamp(110px, 17vw, 230px); letter-spacing: -0.06em;
   color: #F0A7BE; line-height: 1;
 }
+
+/* Ata & Ember preview: a dark, warm card with a dish on a glowing plate. */
+.shot.ata { background: radial-gradient(90% 80% at 55% 50%, #4A2414 0%, #1E120D 62%, #150D0A 100%); }
+.ata .word {
+  font-family: Georgia, "Times New Roman", serif; font-style: italic; font-weight: 700; letter-spacing: -0.04em;
+  color: transparent; -webkit-text-stroke: 1.5px rgba(245, 236, 221, .14);
+}
+.ata .brand { color: #F5ECDD; font-family: Georgia, "Times New Roman", serif; font-weight: 500; letter-spacing: -0.01em; }
+.ata .brand i { color: #FF8C52; }
+.ata .badge { background: #F26A2E; color: #1A0F0A; }
+.ata .plate {
+  position: relative; width: min(54%, 300px); aspect-ratio: 1; border-radius: 50%; overflow: hidden;
+  box-shadow: 0 0 0 10px rgba(245, 236, 221, .07), 0 0 90px -10px rgba(255, 106, 40, .55), 0 30px 60px -25px rgba(0, 0, 0, .8);
+  transition: transform .6s cubic-bezier(.2,.8,.2,1);
+}
+.ata:hover .plate { transform: scale(1.04) rotate(-2deg); }
+.ata .plate img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 50%; display: block; }
+.ata .mini { background: rgba(42, 31, 25, .9); box-shadow: 0 4px 14px rgba(0, 0, 0, .3); }
 .shot .bag { position: relative; width: min(56%, 320px); transition: transform .6s cubic-bezier(.2,.8,.2,1); filter: drop-shadow(0 26px 30px rgba(59, 15, 33, .22)); }
 .shot:hover .bag { transform: translateY(-4%) rotate(-3deg); }
 .shot .bag svg, .mini svg { display: block; width: 100%; height: auto; }
@@ -162,10 +181,56 @@ footer { padding-block: 0 calc(28px + env(safe-area-inset-bottom, 0px)); color: 
     </div>
   </section>
 
-  <section class="work wrap" id="work" aria-labelledby="emmy-title">
+  <section class="work wrap" id="work" aria-label="Projects">
     <div class="inner">
-      <p class="label">Featured project · 2026</p>
-      <article class="project">
+      <p class="label">Projects · 2026</p>
+      <div class="projects">
+      <article class="project" aria-labelledby="ata-title">
+        <a class="shot ata" href="https://oluwatimilehin23.github.io/ata-ember/" aria-label="Open the Ata &amp; Ember live site">
+          <span class="word" aria-hidden="true">suya</span>
+          <span class="brand" aria-hidden="true">Ata <i>&amp;</i> Ember</span>
+          <span class="badge" aria-hidden="true">3D booking</span>
+          <span class="plate" aria-hidden="true"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/SuyavarietiesTX.JPG/500px-SuyavarietiesTX.JPG" alt="" loading="lazy"></span>
+          <span class="minis" aria-hidden="true">
+            <span class="mini"><svg viewBox="0 0 200 200" focusable="false">
+              <path d="M100 30 L180 76 L100 122 L20 76 Z" fill="#A97A4C"/>
+              <path d="M20 76 L100 122 V150 L20 104 Z" fill="#5A3D27"/>
+              <path d="M180 76 L100 122 V150 L180 104 Z" fill="#7A5236"/>
+              <ellipse cx="70" cy="70" rx="16" ry="9" fill="#F5ECDD"/>
+              <ellipse cx="104" cy="56" rx="16" ry="9" fill="#F5ECDD"/>
+              <ellipse cx="104" cy="88" rx="16" ry="9" fill="#F26A2E"/>
+              <ellipse cx="138" cy="74" rx="16" ry="9" fill="#5A4A40"/>
+            </svg></span>
+            <span class="mini"><svg viewBox="0 0 200 200" focusable="false">
+              <rect x="32" y="44" width="136" height="124" rx="22" fill="#F5ECDD"/>
+              <rect x="32" y="44" width="136" height="38" rx="22" fill="#F26A2E"/>
+              <rect x="32" y="64" width="136" height="18" fill="#F26A2E"/>
+              <rect x="64" y="28" width="14" height="34" rx="7" fill="#2A1F19"/>
+              <rect x="122" y="28" width="14" height="34" rx="7" fill="#2A1F19"/>
+              <path d="M70 124 L92 146 L132 104" fill="none" stroke="#2A1F19" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg></span>
+          </span>
+        </a>
+        <div class="info">
+          <h2 id="ata-title">Ata &amp; Ember</h2>
+          <p>A website for a made-up Nigerian grill kitchen, with a photo menu of real Nigerian dishes and table booking on a 3D model of the dining room.</p>
+          <ul class="features">
+            <li>18 dishes, from suya and asun to egusi, efo riro and zobo, with photos, prices and allergens</li>
+            <li>A scroll-driven hero where signature dishes swap in on a glowing plate</li>
+            <li>A 3D dining room you can turn, showing which tables are free for your date, time and party size</li>
+            <li>A booking confirmation with a reference and an add-to-calendar file</li>
+          </ul>
+          <ul class="stack" aria-label="Built with">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>three.js</li><li>Wikimedia Commons</li><li>GitHub Pages</li>
+          </ul>
+          <div class="actions">
+            <a class="btn" href="https://oluwatimilehin23.github.io/ata-ember/">Visit the live site</a>
+            <a class="btn line" href="https://github.com/oluwatimilehin23/ata-ember">View the code</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project" aria-labelledby="emmy-title">
         <a class="shot" href="https://oluwatimilehin23.github.io/emmy-fashion-store/" aria-label="Open the Emmy Fashion Store live site">
           <span class="word" aria-hidden="true">bloom</span>
           <span class="brand" aria-hidden="true">emmy</span>
@@ -220,6 +285,7 @@ footer { padding-block: 0 calc(28px + env(safe-area-inset-bottom, 0px)); color: 
           </div>
         </div>
       </article>
+      </div>
     </div>
   </section>
 
