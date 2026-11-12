@@ -115,6 +115,17 @@ a { color: inherit; }
 .coke:hover .can { transform: rotate(4deg) translateY(-3%); }
 .coke .can svg { display: block; width: 100%; height: auto; }
 .coke .mini { background: rgba(22, 4, 6, .8); box-shadow: 0 4px 14px rgba(0, 0, 0, .35); }
+
+/* EMMY LOGISTIC preview: navy card with an orange route line. */
+.shot.logistic { background: linear-gradient(160deg, #0B2545 0%, #13315C 100%); }
+.logistic .word { font-family: inherit; font-weight: 800; letter-spacing: -0.04em; color: transparent; -webkit-text-stroke: 1.5px rgba(242, 140, 40, .22); }
+.logistic .brand { color: #fff; font-weight: 800; letter-spacing: .08em; }
+.logistic .badge { background: #F28C28; color: #0B2545; }
+.logistic .route { position: relative; width: min(60%, 340px); height: 4px; background: rgba(255, 255, 255, .25); border-radius: 4px; transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+.logistic .route::before, .logistic .route::after { content: ""; position: absolute; top: 50%; width: 16px; height: 16px; border-radius: 50%; transform: translateY(-50%); }
+.logistic .route::before { left: -8px; background: #F28C28; }
+.logistic .route::after { right: -8px; background: #fff; }
+.logistic:hover .route { transform: scaleX(1.04); }
 .shot .bag { position: relative; width: min(56%, 320px); transition: transform .6s cubic-bezier(.2,.8,.2,1); filter: drop-shadow(0 26px 30px rgba(59, 15, 33, .22)); }
 .shot:hover .bag { transform: translateY(-4%) rotate(-3deg); }
 .shot .bag svg, .mini svg { display: block; width: 100%; height: auto; }
@@ -356,6 +367,32 @@ footer { padding-block: 0 calc(28px + env(safe-area-inset-bottom, 0px)); color: 
           <div class="actions">
             <a class="btn" href="https://oluwatimilehin23.github.io/emmy-fashion-store/">Visit the live site</a>
             <a class="btn line" href="https://github.com/oluwatimilehin23/emmy-fashion-store">View the code</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project" aria-labelledby="logistic-title">
+        <a class="shot logistic" href="https://oluwatimilehin23.github.io/emmy-logistic/" aria-label="Open the EMMY LOGISTIC live site">
+          <span class="word" aria-hidden="true">freight</span>
+          <span class="brand" aria-hidden="true">EMMY LOGISTIC</span>
+          <span class="badge" aria-hidden="true">Live</span>
+          <span class="route" aria-hidden="true"></span>
+        </a>
+        <div class="info">
+          <h2 id="logistic-title">EMMY LOGISTIC</h2>
+          <p>A freight and delivery website for EMMY LOGISTIC, headquartered in Ado Ekiti, Nigeria. Customers can get an instant shipping quote, shop shipping plans and track a parcel.</p>
+          <ul class="features">
+            <li>Instant quote calculator for road, air and sea freight with validation</li>
+            <li>Shop with filters, a cart drawer and checkout form</li>
+            <li>Shipment tracker with a status timeline</li>
+            <li>Responsive menu and forms that work on phones</li>
+          </ul>
+          <ul class="stack" aria-label="Built with">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>GitHub Pages</li>
+          </ul>
+          <div class="actions">
+            <a class="btn" href="https://oluwatimilehin23.github.io/emmy-logistic/">Visit the live site</a>
+            <a class="btn line" href="https://github.com/oluwatimilehin23/emmy-logistic">View the code</a>
           </div>
         </div>
       </article>
