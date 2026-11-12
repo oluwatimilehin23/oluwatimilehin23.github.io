@@ -7,7 +7,7 @@
 <meta name="description" content="Web projects by oluwatimilehin23, live and with their code on GitHub.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Yellowtail&display=swap">
 <style>
 /* Layout: a short intro, then each project as a wide card (preview left, write-up right) that stacks on phones. */
 :root {
@@ -100,6 +100,21 @@ a { color: inherit; }
 .ata:hover .plate { transform: scale(1.04) rotate(-2deg); }
 .ata .plate img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 50%; display: block; }
 .ata .mini { background: rgba(42, 31, 25, .9); box-shadow: 0 4px 14px rgba(0, 0, 0, .3); }
+/* Coca-Cola preview: a red glow with the can tilted like the live hero. */
+.shot.coke { background: radial-gradient(90% 85% at 50% 48%, #C4111F 0%, #6A0811 58%, #160103 100%); }
+.coke .word {
+  font-family: "Yellowtail", cursive; font-weight: 400; letter-spacing: 0;
+  color: transparent; -webkit-text-stroke: 1.5px rgba(255, 255, 255, .16);
+}
+.coke .brand { color: #FFFFFF; font-family: "Yellowtail", cursive; font-weight: 400; font-size: 30px; letter-spacing: 0; top: 12px; }
+.coke .badge { background: #FFFFFF; color: #C4111F; }
+.coke .can {
+  position: relative; width: min(28%, 160px); transform: rotate(14deg);
+  filter: drop-shadow(0 30px 30px rgba(0, 0, 0, .45)); transition: transform .6s cubic-bezier(.2,.8,.2,1);
+}
+.coke:hover .can { transform: rotate(4deg) translateY(-3%); }
+.coke .can svg { display: block; width: 100%; height: auto; }
+.coke .mini { background: rgba(22, 4, 6, .8); box-shadow: 0 4px 14px rgba(0, 0, 0, .35); }
 .shot .bag { position: relative; width: min(56%, 320px); transition: transform .6s cubic-bezier(.2,.8,.2,1); filter: drop-shadow(0 26px 30px rgba(59, 15, 33, .22)); }
 .shot:hover .bag { transform: translateY(-4%) rotate(-3deg); }
 .shot .bag svg, .mini svg { display: block; width: 100%; height: auto; }
@@ -185,6 +200,65 @@ footer { padding-block: 0 calc(28px + env(safe-area-inset-bottom, 0px)); color: 
     <div class="inner">
       <p class="label">Projects · 2026</p>
       <div class="projects">
+      <article class="project" aria-labelledby="coke-title">
+        <a class="shot coke" href="https://oluwatimilehin23.github.io/coca-cola/" aria-label="Open the Coca-Cola 3D live site">
+          <span class="word" aria-hidden="true">fizz</span>
+          <span class="brand" aria-hidden="true">Coca-Cola</span>
+          <span class="badge" aria-hidden="true">3D</span>
+          <span class="can" aria-hidden="true">
+            <svg viewBox="0 0 120 220" focusable="false">
+              <defs>
+                <linearGradient id="cokeMetal" x1="0" x2="1">
+                  <stop offset="0" stop-color="#8D9096"/><stop offset=".3" stop-color="#EEF0F2"/>
+                  <stop offset=".6" stop-color="#B9BCC2"/><stop offset="1" stop-color="#6F7278"/>
+                </linearGradient>
+                <linearGradient id="cokeShade" x1="0" x2="1">
+                  <stop offset="0" stop-color="#000" stop-opacity=".45"/><stop offset=".12" stop-color="#000" stop-opacity=".1"/>
+                  <stop offset=".28" stop-color="#FFF" stop-opacity=".3"/><stop offset=".38" stop-color="#FFF" stop-opacity="0"/>
+                  <stop offset=".85" stop-color="#000" stop-opacity=".25"/><stop offset="1" stop-color="#000" stop-opacity=".5"/>
+                </linearGradient>
+              </defs>
+              <path d="M12 40 C12 26 22 20 24 12 H96 C98 20 108 26 108 40 V188 C108 198 100 204 96 208 H24 C20 204 12 198 12 188 Z" fill="url(#cokeMetal)"/>
+              <rect x="12" y="44" width="96" height="140" fill="#E41E2B"/>
+              <path d="M12 132 C40 112 74 150 108 124 V142 C76 166 42 128 12 150 Z" fill="#FFFFFF"/>
+              <text x="60" y="102" text-anchor="middle" font-family="Yellowtail, cursive" font-size="26" textLength="82" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF">Coca-Cola</text>
+              <path d="M12 40 C12 26 22 20 24 12 H96 C98 20 108 26 108 40 V188 C108 198 100 204 96 208 H24 C20 204 12 198 12 188 Z" fill="url(#cokeShade)"/>
+              <ellipse cx="60" cy="12" rx="36" ry="5" fill="#D7D9DD"/>
+            </svg>
+          </span>
+          <span class="minis" aria-hidden="true">
+            <span class="mini"><svg viewBox="0 0 200 200" focusable="false">
+              <path d="M66 40 C66 30 72 26 74 20 H126 C128 26 134 30 134 40 V164 C134 172 128 176 126 180 H74 C72 176 66 172 66 164 Z" fill="#B9BCC2"/>
+              <rect x="66" y="44" width="68" height="116" fill="#171717"/>
+              <path d="M66 120 C86 106 112 132 134 114 V126 C112 144 88 118 66 134 Z" fill="#E41E2B"/>
+              <rect x="80" y="76" width="40" height="10" rx="5" fill="#E41E2B"/>
+            </svg></span>
+            <span class="mini"><svg viewBox="0 0 200 200" focusable="false">
+              <path d="M92 26 H108 V40 C108 58 118 66 121 82 C124 96 117 104 118 114 C120 130 126 146 122 172 C121 178 116 184 110 184 H90 C84 184 79 178 78 172 C74 146 80 130 82 114 C83 104 76 96 79 82 C82 66 92 58 92 40 Z" fill="#3A1408"/>
+              <rect x="89" y="16" width="22" height="12" rx="3" fill="#D71A28"/>
+              <path d="M86 122 H114" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+            </svg></span>
+          </span>
+        </a>
+        <div class="info">
+          <h2 id="coke-title">Coca-Cola 3D</h2>
+          <p>A fan-concept landing page for Coca-Cola. A 3D can and glass bottle tilt toward your cursor and spin into each other when you switch products. It's not affiliated with The Coca-Cola Company.</p>
+          <ul class="features">
+            <li>A Classic can, a Zero Sugar can and a glass contour bottle, built as 3D models in the browser</li>
+            <li>Switching products spins the model with a motion blur and sends the cherries flying</li>
+            <li>Slide-in panels for flavors, tasting notes, recycling, reviews, a shop cart and a contact form</li>
+            <li>Works on phones too, with a menu button and touch to tilt</li>
+          </ul>
+          <ul class="stack" aria-label="Built with">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>GSAP</li><li>model-viewer</li><li>GitHub Pages</li>
+          </ul>
+          <div class="actions">
+            <a class="btn" href="https://oluwatimilehin23.github.io/coca-cola/">Visit the live site</a>
+            <a class="btn line" href="https://github.com/oluwatimilehin23/calculator">View the code</a>
+          </div>
+        </div>
+      </article>
+
       <article class="project" aria-labelledby="ata-title">
         <a class="shot ata" href="https://oluwatimilehin23.github.io/ata-ember/" aria-label="Open the Ata &amp; Ember live site">
           <span class="word" aria-hidden="true">suya</span>
